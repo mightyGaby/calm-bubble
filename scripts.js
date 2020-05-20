@@ -1,6 +1,7 @@
 // TO DO:
 // stop animation when hidden
 // add reset button
+// soothing message when bubble pops
 
 $(document).ready(function() {
     setContainerSize('#background-wrap');
@@ -25,13 +26,12 @@ function explode(e){
 }
 
 function displayQuote(){
-  var container=$('.quotes'),
-      quotes = ["this too shall pass"];
+  var container = $('#quote'),
+      quotes = ["this too shall pass", "you're a champion", "be kind to yourself", "you are in control", "be free!"];
   var rand = Math.floor(Math.random()*(quotes.length-0)+0)
-  console.log(quotes[rand])
-  container.removeClass('hidden');
-  container.val(quotes[rand]);
-
+  container.text(quotes[rand]);
+  container.show();
+  console.log(quotes[rand]);
 }
 function hideContent () {
   $('.content > p, button, textarea').hide()
