@@ -292,7 +292,7 @@ textarea[type=text] {
 }
 
 #quote.quote-visible {
-  animation: quoteFadeInBounce 1s ease-out;
+  animation: quoteFadeInBounce 1s ease-out forwards;
 }
 
 @keyframes quoteFadeInBounce {
