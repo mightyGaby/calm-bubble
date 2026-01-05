@@ -38,13 +38,9 @@ function explode(e){
   // Create confetti particles
   createConfetti(bubbleCenterX, bubbleCenterY);
   
-  // Hide bubble
+  // Hide bubble and reveal quote immediately with confetti
   $bubble.hide();
-  
-  // Display quote in center after confetti animation (1.5s delay)
-  setTimeout(function() {
-    displayQuote();
-  }, 1500);
+  displayQuote();
 }
 
 function displayQuote(){
@@ -74,6 +70,14 @@ function displayQuote(){
   // Trigger fade-in and bounce animation
   setTimeout(function() {
     container.addClass('quote-visible');
+    
+    // Ensure quote stays visible after animation completes (1 second)
+    setTimeout(function() {
+      container.css({
+        'opacity': '1',
+        'transform': 'translate(-50%, -50%)'
+      });
+    }, 1000);
   }, 10);
   
   console.log(quotes[rand]);

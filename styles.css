@@ -18,6 +18,7 @@ body {
   width: 100%;
 }
 
+
 /* KEYFRAMES */
 
 @-webkit-keyframes animateBubble {
@@ -261,6 +262,7 @@ textarea[type=text] {
     outline: none;
     margin: 10% auto 0 auto;
     font-size: 40px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     cursor: text;
 	border-radius: 30px
 
@@ -277,6 +279,7 @@ textarea[type=text] {
 .fear {
   padding-top: 30%;
   text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 .hidden {
   display: none;
@@ -285,19 +288,25 @@ textarea[type=text] {
 #quote {
   font-size: 48px;
   font-weight: bold;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   pointer-events: none;
-  opacity: 0;
 }
 
 #quote.quote-visible {
+  opacity: 1 !important;
   animation: quoteFadeInBounce 1s ease-out forwards;
+  animation-fill-mode: forwards;
+}
+
+#quote.quote-visible,
+#quote.quote-visible * {
+  opacity: 1 !important;
 }
 
 @keyframes quoteFadeInBounce {
   0% {
-    opacity: 0;
     transform: translate(-50%, -60%);
   }
   60% {
@@ -323,4 +332,51 @@ textarea[type=text] {
   border-radius: 2px;
   z-index: 9999;
   transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+}
+
+
+/* CSS */
+button {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
 }
